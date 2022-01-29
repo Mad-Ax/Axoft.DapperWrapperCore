@@ -39,5 +39,17 @@
         {
             return await GetAllAsync<TestModel>(predicate, limit, sort);
         }
+
+        // TODO: missing some here...
+
+        public TestModel QueryOne()
+        {
+            return QueryOne<TestModel>("SELECT * FROM testmodel");
+        }
+
+        public TestModel QueryOne(int id)
+        {
+            return QueryOne<TestModel>("SELECT * FROM testmodel WHERE id = @id", new { id });
+        }
     }
 }
