@@ -16,6 +16,7 @@
         protected override IDbConnection GetDbConnection()
         {
             DapperExtensions.SqlDialect = new SqliteDialect();
+            DapperAsyncExtensions.SqlDialect = new SqliteDialect();
 
             SqliteConnection sqliteConnection;
             try
@@ -33,6 +34,7 @@
         protected override async Task<IDbConnection> GetDbConnectionAsync()
         {
             DapperExtensions.SqlDialect = new SqliteDialect();
+            DapperAsyncExtensions.SqlDialect = new SqliteDialect();
 
             SqliteConnection sqliteConnection;
             try
